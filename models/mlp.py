@@ -91,7 +91,7 @@ def train_model(X_train, y_train, device):
     """训练MLP模型并进行评估"""
     # 划分训练集和验证集
     X_train_split, X_val, y_train_split, y_val = train_test_split(
-        X_train, y_train, test_size=0.2, random_state=42, stratify=y_train
+        X_train, y_train, test_size=0.1, random_state=42, stratify=y_train
     )
     
     # 创建数据加载器
@@ -106,7 +106,7 @@ def train_model(X_train, y_train, device):
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     
     print("训练MLP模型...")
-    num_epochs = 100
+    num_epochs = 30
     
     for epoch in range(num_epochs):
         # 训练阶段
